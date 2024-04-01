@@ -1,18 +1,22 @@
 #include<iostream>
 using namespace std;
 int main(){
-int num[10];
-cout<<"Enter numbers:";
-for(int i=0;i<10;i++){
-   cin>>num[i];
-}
-cout<<"Positive numbers:";
-for(int i=0;i<10;i++){
-  if(num[i]>0) {cout<<num[i]<<",";}
-}
-cout<<endl<<"Negative numbers:";
-for(int i=0;i<10;i++){
-  if(num[i]<0){ cout<<num[i]<<",";}
-}
+    int n;
+    cout<<"NO. of elemnt you want to test :";
+    cin>> n;
+    while(n--){
+        int A;
+        cout<<"Enter element : ";
+        cin>> A;
+        bool prime=true;
+        for(int i=2;i<A;i++){
+            if(A%i==0){
+                prime=false;}
+        }
+        if(prime==false){
+            cout<<"no"<<endl;}
+        else{
+            cout<<"yes"<<endl;}
+    }
     return 0;
 }

@@ -1,53 +1,22 @@
-#include<iostream>
-#include<string>
+#include <iostream>
 using namespace std;
-void asc_sort(int arr[]){
-    int size=10;
-    for(int i=0;i<size-1;i++){
-        for(int j=0;j<size-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                int temp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    }
-    for(int i=0;i<size;i++){
-        cout<<arr[i]<<",";
-    }
+void ODDNUMBER(int l , int u){
+  if (l==u || l>u || l+1==u){
+    return;
+  }
+  if ((u-1)%2!=0){
+    cout << u-1 << ",";
+  }
+  ODDNUMBER(l,u-1);
 }
 
-void des_sort(int arr[]){
-    int size=10;
-    for(int i=0;i<size-1;i++){
-        for(int j=0;j<size-i-1;j++){
-            if(arr[j]<arr[j+1]){
-                int temp=arr[j+1];
-                arr[j+1]=arr[j];
-                arr[j]=temp;
-            }
-        }
-    }
-    for(int i=0;i<10;i++){
-        cout<<arr[i]<<",";
-    }
-}
 int main(){
-    int numbers[10];
-    cout<<"Enter 10 numbers: ";
-    for(int i=0;i<10;i++)
-    cin>>numbers[i];
-
-    string str;
-
-    cout<<"Enter order: ";
-    cin>>str;
-    if(str=="asc"){
-          asc_sort(numbers);
-    }
-    else{
-         des_sort(numbers);
-
-    }
+  int a, b;
+  cout << "enter lower bond:"<< "\n";
+  cin >> a;
+  cout << "enter upper bond:"<< "\n";
+  cin >> b;
+  cout << "number of odd numbers between upper and lower bound:"<< "\n";
+  ODDNUMBER(a, b);
   return 0;
 }

@@ -1,21 +1,22 @@
 #include<iostream>
 using namespace std;
-void reverse(int l,int u){
-     if((u)%2!=0) { cout<<u<<",";}
-      if(l>u){
-        return;
-    }
-
-
-    reverse(l,u-1);
-   
-}
 int main(){
-    int a,b;
-    cout<<"enter lower bond:";
-    cin>>a;
-    cout<<"enter upper bond:";
-    cin>>b;
-    reverse(a,b);
+    int n;
+    cout<<"NO. of elemnt you want to test :";
+    cin>> n;
+    while(n--){
+        int A;
+        cout<<"Enter element : ";
+        cin>> A;
+        bool prime=true;
+        for(int i=2;i<A;i++){
+            if(A%i==0){
+                prime=false;}
+        }
+        if(prime==false){
+            cout<<"no"<<endl;}
+        else{
+            cout<<"yes"<<endl;}
+    }
     return 0;
 }
